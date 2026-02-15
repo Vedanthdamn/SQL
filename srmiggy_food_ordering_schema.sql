@@ -516,7 +516,7 @@ INSERT INTO Orders (customer_id, vendor_id, delivery_slot_id, rider_id, order_st
 (2, 1, 5, NULL, 'confirmed', 125.00, 20.00, 25.00, 120.00, 'Hostel Block B, Room 205', 'Extra chutney please', '2024-02-15 19:15:00', '2024-02-15 19:18:00', NULL, NULL, NULL),
 
 -- Cancelled Order
-(3, 2, 3, NULL, 'cancelled', 160.00, 20.00, 0.00, 180.00, 'Off-Campus Apartment, Phase 2', NULL, '2024-02-14 12:30:00', NULL, NULL, NULL, NULL);
+(3, 2, 3, NULL, 'cancelled', 160.00, 20.00, 0.00, 180.00, 'Off-Campus Apartment, Phase 2', NULL, '2024-02-14 12:30:00', NULL, NULL, '2024-02-14 12:40:00', 'Changed mind about the order');
 
 -- -----------------------------------------------------------------------------
 -- Insert Sample Order Items

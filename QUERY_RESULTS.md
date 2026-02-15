@@ -33,7 +33,7 @@ ORDER BY o.order_date DESC;
 +----------+---------------------+---------------------+--------------+--------------+-----------------+----------------------------------+---------------------------+
 | order_id | order_date          | restaurant_name     | order_status | final_amount | customer_rating | customer_review                  | items_ordered             |
 +----------+---------------------+---------------------+--------------+--------------+-----------------+----------------------------------+---------------------------+
-|        6 | 2024-02-15 19:00:00 | North Bites         | preparing    | 220.00       | NULL            | NULL                             | 1x Paneer Butter Masala,  |
+|        6 | 2024-02-15 19:00:00 | North Bites         | preparing    | 280.00       | NULL            | NULL                             | 1x Paneer Butter Masala,  |
 |          |                     |                     |              |              |                 |                                  | 1x Dal Tadka, 1x Samosa   |
 +----------+---------------------+---------------------+--------------+--------------+-----------------+----------------------------------+---------------------------+
 |        1 | 2024-02-10 12:30:00 | South Indian Delight| delivered    | 130.00       | 5               | Excellent food and quick delivery| 1x South Indian Meals     |
@@ -68,9 +68,9 @@ ORDER BY total_revenue DESC;
 +-----------+----------------------+---------------+--------------+-------------------+---------------+-----------------+----------------+
 | vendor_id | restaurant_name      | cuisine_type  | total_orders | delivered_orders  | total_revenue | avg_order_value | average_rating |
 +-----------+----------------------+---------------+--------------+-------------------+---------------+-----------------+----------------+
+|         2 | North Bites          | North Indian  |            3 |                 1 | 215.00        | 215.00          | 4.20           |
 |         3 | Chinese Wok Express  | Chinese       |            2 |                 1 | 325.00        | 325.00          | 4.70           |
-|         2 | North Bites          | North Indian  |            3 |                 1 | 200.00        | 200.00          | 4.20           |
-|         1 | South Indian Delight | South Indian  |            3 |                 2 | 295.00        | 147.50          | 4.50           |
+|         1 | South Indian Delight | South Indian  |            3 |                 2 | 305.00        | 152.50          | 4.50           |
 +-----------+----------------------+---------------+--------------+-------------------+---------------+-----------------+----------------+
 ```
 
@@ -108,7 +108,7 @@ ORDER BY wt.transaction_date DESC;
 +------------------------+---------------------+------------------+--------+---------------+------------------+-----------------+
 | wallet_transaction_id  | transaction_date    | transaction_type | amount | balance_after | description      | order_reference |
 +------------------------+---------------------+------------------+--------+---------------+------------------+-----------------+
-|                      4 | 2024-02-15 19:02:00 | debit            | 220.00 | 400.00        | Payment for order| Order #6        |
+|                      4 | 2024-02-15 19:02:00 | debit            | 280.00 | 340.00        | Payment for order| Order #6        |
 |                      3 | 2024-02-14 15:00:00 | credit           | 250.00 | 620.00        | Wallet recharge  | N/A             |
 |                      2 | 2024-02-10 12:31:00 | debit            | 130.00 | 370.00        | Payment for order| Order #1        |
 |                      1 | 2024-02-01 10:00:00 | credit           | 500.00 | 500.00        | Wallet recharge  | N/A             |
@@ -119,7 +119,7 @@ ORDER BY wt.transaction_date DESC;
 - Customer started with ₹500 recharge
 - Spent ₹130 on first order
 - Recharged ₹250 more
-- Current balance: ₹400
+- Current balance: ₹340
 
 ---
 
@@ -274,8 +274,8 @@ ORDER BY order_date DESC;
 +------------+--------------+-------------------+---------------+-----------------+
 | 2024-02-15 |            3 |                 0 | 0.00          | NULL            |
 | 2024-02-14 |            1 |                 0 | 0.00          | NULL            |
-| 2024-02-13 |            1 |                 1 | 165.00        | 165.00          |
-| 2024-02-12 |            1 |                 1 | 200.00        | 200.00          |
+| 2024-02-13 |            1 |                 1 | 175.00        | 175.00          |
+| 2024-02-12 |            1 |                 1 | 215.00        | 215.00          |
 | 2024-02-11 |            1 |                 1 | 325.00        | 325.00          |
 | 2024-02-10 |            1 |                 1 | 130.00        | 130.00          |
 +------------+--------------+-------------------+---------------+-----------------+
@@ -318,8 +318,8 @@ ORDER BY u.wallet_balance DESC;
 +---------+---------------+---------------------------+----------------+--------------------+---------------+--------------+--------------+
 |       4 | Sneha Reddy   | sneha.reddy@srmist.edu.in | 1000.00        | 1                  | 1000.00       | 0.00         | 1            |
 |       2 | Priya Kumar   | priya.kumar@srmist.edu.in | 880.00         | 2                  | 1000.00       | 120.00       | 2            |
-|       1 | Rahul Sharma  | rahul.sharma@srmist.edu.in| 400.00         | 4                  | 750.00        | 350.00       | 2            |
-|       3 | Amit Patel    | amit.patel@srmist.edu.in  | 300.00         | 3                  | 500.00        | 380.00       | 2            |
+|       1 | Rahul Sharma  | rahul.sharma@srmist.edu.in| 340.00         | 4                  | 750.00        | 410.00       | 2            |
+|       3 | Amit Patel    | amit.patel@srmist.edu.in  | 285.00         | 4                  | 500.00        | 395.00       | 2            |
 |       5 | Vikram Singh  | vikram.singh@srmist.edu.in| 230.00         | 2                  | 500.00        | 270.00       | 1            |
 +---------+---------------+---------------------------+----------------+--------------------+---------------+--------------+--------------+
 ```
@@ -327,6 +327,7 @@ ORDER BY u.wallet_balance DESC;
 **Insights**:
 - Sneha Reddy has highest balance (₹1000) - just recharged, no orders yet
 - Rahul Sharma is most active (4 transactions, 2 orders)
+- Amit Patel has refund transaction included (order cancelled)
 - All customers maintain positive wallet balances
 
 ---

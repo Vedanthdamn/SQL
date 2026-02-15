@@ -136,7 +136,7 @@ Use this checklist to ensure your project is complete and ready for submission.
 
 - [ ] **Format Requirements**
   - [ ] Report follows university format guidelines
-  - [ ] Font: Times New Roman or Arial (11-12pt) - use one consistently
+  - [ ] Font: Times New Roman 12pt (recommended) or Arial 11pt - use ONE font throughout
   - [ ] Line spacing: 1.5 or Double
   - [ ] Margins: 1 inch all sides
   - [ ] Page numbers included
