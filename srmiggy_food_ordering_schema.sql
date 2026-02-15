@@ -426,9 +426,9 @@ CREATE TABLE Wallet_Transactions (
 -- -----------------------------------------------------------------------------
 INSERT INTO Users (full_name, email, phone_number, password_hash, user_role, wallet_balance, address) VALUES
 -- Customers
-('Rahul Sharma', 'rahul.sharma@srmist.edu.in', '9876543210', '$2y$10$abcdefghijklmnopqrstuvwxyz123456', 'customer', 500.00, 'Hostel Block A, Room 301, SRM University'),
-('Priya Kumar', 'priya.kumar@srmist.edu.in', '9876543211', '$2y$10$abcdefghijklmnopqrstuvwxyz123456', 'customer', 750.00, 'Hostel Block B, Room 205, SRM University'),
-('Amit Patel', 'amit.patel@srmist.edu.in', '9876543212', '$2y$10$abcdefghijklmnopqrstuvwxyz123456', 'customer', 300.00, 'Off-Campus Apartment, Phase 2'),
+('Rahul Sharma', 'rahul.sharma@srmist.edu.in', '9876543210', '$2y$10$abcdefghijklmnopqrstuvwxyz123456', 'customer', 340.00, 'Hostel Block A, Room 301, SRM University'),
+('Priya Kumar', 'priya.kumar@srmist.edu.in', '9876543211', '$2y$10$abcdefghijklmnopqrstuvwxyz123456', 'customer', 880.00, 'Hostel Block B, Room 205, SRM University'),
+('Amit Patel', 'amit.patel@srmist.edu.in', '9876543212', '$2y$10$abcdefghijklmnopqrstuvwxyz123456', 'customer', 285.00, 'Off-Campus Apartment, Phase 2'),
 ('Sneha Reddy', 'sneha.reddy@srmist.edu.in', '9876543213', '$2y$10$abcdefghijklmnopqrstuvwxyz123456', 'customer', 1000.00, 'Hostel Block C, Room 401, SRM University'),
 ('Vikram Singh', 'vikram.singh@srmist.edu.in', '9876543214', '$2y$10$abcdefghijklmnopqrstuvwxyz123456', 'customer', 250.00, 'Hostel Block D, Room 102, SRM University'),
 
@@ -507,16 +507,16 @@ INSERT INTO Orders (customer_id, vendor_id, delivery_slot_id, rider_id, order_st
 -- Completed Orders
 (1, 1, 3, 1, 'delivered', 120.00, 20.00, 10.00, 130.00, 'Hostel Block A, Room 301', 'Please deliver before 1 PM', '2024-02-10 12:30:00', '2024-02-10 12:35:00', '2024-02-10 13:15:00', 5, 'Excellent food and quick delivery!'),
 (2, 3, 5, 2, 'delivered', 340.00, 25.00, 40.00, 325.00, 'Hostel Block B, Room 205', NULL, '2024-02-11 19:00:00', '2024-02-11 19:05:00', '2024-02-11 19:45:00', 4, 'Good taste but slightly delayed'),
-(3, 2, 3, 1, 'delivered', 205.00, 20.00, 25.00, 200.00, 'Off-Campus Apartment, Phase 2', 'Less spicy please', '2024-02-12 13:00:00', '2024-02-12 13:05:00', '2024-02-12 13:40:00', 5, 'Perfect! Exactly as requested'),
-(4, 1, 1, 3, 'delivered', 150.00, 15.00, 0.00, 165.00, 'Hostel Block C, Room 401', NULL, '2024-02-13 08:00:00', '2024-02-13 08:05:00', '2024-02-13 08:35:00', 4, 'Hot and fresh breakfast'),
+(3, 2, 3, 1, 'delivered', 220.00, 20.00, 25.00, 215.00, 'Off-Campus Apartment, Phase 2', 'Less spicy please', '2024-02-12 13:00:00', '2024-02-12 13:05:00', '2024-02-12 13:40:00', 5, 'Perfect! Exactly as requested'),
+(4, 1, 1, 3, 'delivered', 160.00, 15.00, 0.00, 175.00, 'Hostel Block C, Room 401', NULL, '2024-02-13 08:00:00', '2024-02-13 08:05:00', '2024-02-13 08:35:00', 4, 'Hot and fresh breakfast'),
 
 -- Active Orders
 (5, 3, 5, 2, 'out_for_delivery', 280.00, 20.00, 30.00, 270.00, 'Hostel Block D, Room 102', 'Call before delivery', '2024-02-15 18:30:00', '2024-02-15 18:35:00', NULL, NULL, NULL),
-(1, 2, 5, NULL, 'preparing', 215.00, 20.00, 15.00, 220.00, 'Hostel Block A, Room 301', NULL, '2024-02-15 19:00:00', '2024-02-15 19:05:00', NULL, NULL, NULL),
-(2, 1, 5, NULL, 'confirmed', 105.00, 20.00, 5.00, 120.00, 'Hostel Block B, Room 205', 'Extra chutney please', '2024-02-15 19:15:00', '2024-02-15 19:18:00', NULL, NULL, NULL),
+(1, 2, 5, NULL, 'preparing', 260.00, 20.00, 0.00, 280.00, 'Hostel Block A, Room 301', NULL, '2024-02-15 19:00:00', '2024-02-15 19:05:00', NULL, NULL, NULL),
+(2, 1, 5, NULL, 'confirmed', 125.00, 20.00, 25.00, 120.00, 'Hostel Block B, Room 205', 'Extra chutney please', '2024-02-15 19:15:00', '2024-02-15 19:18:00', NULL, NULL, NULL),
 
 -- Cancelled Order
-(3, 2, 3, NULL, 'cancelled', 160.00, 20.00, 0.00, 180.00, 'Off-Campus Apartment, Phase 2', NULL, '2024-02-14 12:30:00', '2024-02-14 12:35:00', NULL, NULL, NULL);
+(3, 2, 3, NULL, 'cancelled', 160.00, 20.00, 0.00, 180.00, 'Off-Campus Apartment, Phase 2', NULL, '2024-02-14 12:30:00', NULL, NULL, NULL, NULL);
 
 -- -----------------------------------------------------------------------------
 -- Insert Sample Order Items
@@ -528,16 +528,16 @@ INSERT INTO Order_Items (order_id, menu_item_id, quantity, unit_price, subtotal,
 -- Order 2 (Customer 2 - Chinese Wok Express)
 (2, 14, 1, 130.00, 130.00, NULL),
 (2, 16, 1, 180.00, 180.00, 'Extra spicy'),
-(2, 17, 1, 30.00, 30.00, NULL),
+(2, 18, 1, 80.00, 80.00, NULL),
 
 -- Order 3 (Customer 3 - North Bites)
 (3, 7, 1, 150.00, 150.00, 'Medium spicy'),
 (3, 9, 2, 25.00, 50.00, NULL),
-(3, 12, 1, 5.00, 5.00, NULL),
+(3, 12, 1, 20.00, 20.00, NULL),
 
 -- Order 4 (Customer 4 - South Indian Delight)
 (4, 1, 2, 60.00, 120.00, NULL),
-(4, 2, 1, 30.00, 30.00, NULL),
+(4, 2, 1, 40.00, 40.00, NULL),
 
 -- Order 5 (Customer 5 - Chinese Wok Express) - Active
 (5, 13, 2, 100.00, 200.00, NULL),
@@ -545,12 +545,12 @@ INSERT INTO Order_Items (order_id, menu_item_id, quantity, unit_price, subtotal,
 
 -- Order 6 (Customer 1 - North Bites) - Active
 (6, 7, 1, 150.00, 150.00, NULL),
-(6, 8, 1, 45.00, 45.00, NULL),
+(6, 8, 1, 90.00, 90.00, NULL),
 (6, 12, 1, 20.00, 20.00, NULL),
 
 -- Order 7 (Customer 2 - South Indian Delight) - Active
 (7, 2, 2, 40.00, 80.00, 'Extra sambar'),
-(7, 9, 1, 25.00, 25.00, NULL),
+(7, 3, 1, 45.00, 45.00, NULL),
 
 -- Order 8 (Customer 3 - North Bites) - Cancelled
 (8, 10, 1, 140.00, 140.00, NULL),
@@ -562,10 +562,10 @@ INSERT INTO Order_Items (order_id, menu_item_id, quantity, unit_price, subtotal,
 INSERT INTO Payment_Transactions (order_id, payment_method, payment_status, amount, transaction_date, completed_at, payment_gateway_ref) VALUES
 (1, 'wallet', 'completed', 130.00, '2024-02-10 12:30:00', '2024-02-10 12:31:00', NULL),
 (2, 'upi', 'completed', 325.00, '2024-02-11 19:00:00', '2024-02-11 19:02:00', 'UPI/402468135790'),
-(3, 'wallet', 'completed', 200.00, '2024-02-12 13:00:00', '2024-02-12 13:01:00', NULL),
-(4, 'card', 'completed', 165.00, '2024-02-13 08:00:00', '2024-02-13 08:02:00', 'CARD/567891234560'),
+(3, 'wallet', 'completed', 215.00, '2024-02-12 13:00:00', '2024-02-12 13:01:00', NULL),
+(4, 'card', 'completed', 175.00, '2024-02-13 08:00:00', '2024-02-13 08:02:00', 'CARD/567891234560'),
 (5, 'wallet', 'completed', 270.00, '2024-02-15 18:30:00', '2024-02-15 18:31:00', NULL),
-(6, 'upi', 'completed', 220.00, '2024-02-15 19:00:00', '2024-02-15 19:02:00', 'UPI/135792468024'),
+(6, 'upi', 'completed', 280.00, '2024-02-15 19:00:00', '2024-02-15 19:02:00', 'UPI/135792468024'),
 (7, 'wallet', 'completed', 120.00, '2024-02-15 19:15:00', '2024-02-15 19:16:00', NULL),
 (8, 'wallet', 'refunded', 180.00, '2024-02-14 12:30:00', '2024-02-14 12:45:00', NULL);
 
@@ -577,7 +577,7 @@ INSERT INTO Wallet_Transactions (user_id, transaction_type, amount, balance_afte
 (1, 'credit', 500.00, 500.00, 'Wallet recharge', NULL, '2024-02-01 10:00:00', 'upi'),
 (1, 'debit', 130.00, 370.00, 'Payment for order', 1, '2024-02-10 12:31:00', NULL),
 (1, 'credit', 250.00, 620.00, 'Wallet recharge', NULL, '2024-02-14 15:00:00', 'card'),
-(1, 'debit', 220.00, 400.00, 'Payment for order', 6, '2024-02-15 19:02:00', NULL),
+(1, 'debit', 280.00, 340.00, 'Payment for order', 6, '2024-02-15 19:02:00', NULL),
 
 -- Customer 2 Wallet History
 (2, 'credit', 1000.00, 1000.00, 'Wallet recharge', NULL, '2024-02-05 11:00:00', 'net_banking'),
@@ -585,9 +585,9 @@ INSERT INTO Wallet_Transactions (user_id, transaction_type, amount, balance_afte
 
 -- Customer 3 Wallet History
 (3, 'credit', 500.00, 500.00, 'Wallet recharge', NULL, '2024-02-08 14:00:00', 'upi'),
-(3, 'debit', 200.00, 300.00, 'Payment for order', 3, '2024-02-12 13:01:00', NULL),
-(3, 'debit', 180.00, 120.00, 'Payment for order', 8, '2024-02-14 12:31:00', NULL),
-(3, 'refund', 180.00, 300.00, 'Refund for cancelled order', 8, '2024-02-14 12:46:00', NULL),
+(3, 'debit', 215.00, 285.00, 'Payment for order', 3, '2024-02-12 13:01:00', NULL),
+(3, 'debit', 180.00, 105.00, 'Payment for order', 8, '2024-02-14 12:31:00', NULL),
+(3, 'refund', 180.00, 285.00, 'Refund for cancelled order', 8, '2024-02-14 12:46:00', NULL),
 
 -- Customer 4 Wallet History
 (4, 'credit', 1000.00, 1000.00, 'Wallet recharge', NULL, '2024-02-01 09:00:00', 'card'),
